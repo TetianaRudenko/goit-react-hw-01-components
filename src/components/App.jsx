@@ -1,5 +1,7 @@
-import user from "../data/user";
-import { Profile } from './Profile/Profile'
+import user from "../data/user.json";
+import data from '../data/data.json';
+import { Profile } from './Profile/Profile';
+import { Statistics } from "./Statistics/Statistics";
 
 
 
@@ -10,12 +12,16 @@ export const App = () => {
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        flexDirection: "column",
+        gap: 20,
         alignItems: 'center',
         fontSize: 40,
         color: '#010101'
       }}
     >
       {/* //React homework template */}
+
+      {/* 1 - Профіль соціальної мережі */}
       <Profile
         username={user.username}
         tag={user.tag}
@@ -23,6 +29,14 @@ export const App = () => {
         avatar={user.avatat}
         stats={user.stats}
       />
+
+      {/* 2- Секція статистики */}
+      <Statistics
+        title='Upload stats'
+        stats={data}
+      />
+
+
     </div>
   );
 };
